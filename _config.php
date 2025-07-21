@@ -15,6 +15,7 @@ if (headers_sent($filename, $line)) {
         $filename,
         $line
     ));
+    // return here to prevent session_set_save_handler() being called below
     return;
 }
 session_set_save_handler(Injector::inst()->get(FileSessionHandler::class));
