@@ -6,11 +6,19 @@ icon: file
 
 # Non-blocking file-based sessions
 
-Make sure that your Silverstripe CMS installation has [`silverstripe/non-blocking-sessions`](https://github.com/silverstripe/silverstripe-non-blocking-sessions/) installed.
-
 The default file-based session handler for PHP holds a lock on the session file while the session is open. This means that multiple concurrent requests from the same user have to wait for one another to finish processing after a session has been started. This includes AJAX requests.
 
 This module provides file-based session handler that is *non-blocking*, which means that multiple concurrent requests from the same user don't have to wait for one another to finish.
+
+## Installation
+
+```bash
+composer require silverstripe/non-blocking-sessions
+```
+
+## GitHub repository
+
+<https://github.com/silverstripe/silverstripe-non-blocking-sessions>
 
 > [!NOTE]
 > The session save handler in this module differs from the default PHP file session handler in the following ways:
